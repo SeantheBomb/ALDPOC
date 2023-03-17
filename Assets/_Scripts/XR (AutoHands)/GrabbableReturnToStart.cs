@@ -35,6 +35,10 @@ public class GrabbableReturnToStart : CorruptedBehaviour
         {
             resetPoint = pos.placePoint;
         }
+        else if(grabbable.placePoint != null)
+        {
+            resetPoint = grabbable.placePoint;
+        }
     }
 
     private void OnObjectGrabbed(Hand hand, Grabbable grabbable)

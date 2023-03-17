@@ -1,3 +1,4 @@
+using Corrupted;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,9 @@ using UnityEngine.Events;
 public class LaserWand : Tool
 {
 
-    public bool isPowered = false;
+    public LaserDeviceSim laserDevice;
+
+    public bool isPowered => laserDevice.isOn;
 
     public float range;
 
@@ -14,12 +17,15 @@ public class LaserWand : Tool
 
     public ParticleSystem vfx;
 
+    public AudioSource sfx;
+
     public UnityEvent OnLaserHit;
 
     public override void Start()
     {
         base.Start();
         vfx.Stop();
+        sfx.Stop();
     }
 
     public void FireLaser()
@@ -32,6 +38,7 @@ public class LaserWand : Tool
             if (vfx.isPlaying == false)
             {
                 vfx.Play();
+                sfx.Play();
                 OnLaserHit?.Invoke();
             }
             Debug.Log($"Laser: Hit {hit.transform.name}");
@@ -39,6 +46,7 @@ public class LaserWand : Tool
         else
         {
             vfx.Stop();
+            sfx.Stop();
             Debug.Log($"Laser: Hit nothing");
         }
     }
@@ -55,6 +63,7 @@ public class LaserWand : Tool
     public override void StopPrimaryUse()
     {
         vfx.Stop();
+        sfx.Stop();
     }
 
     public override void StopSecondaryUse()

@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8063263751136115483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5270b9753ff665a47ba351f406c7bad1, type: 3}
+  m_Name: Instruction
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 520, y: 568}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -8063263751136115483}
+      _typeQualifiedName: GraphNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 4240373789150760093}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -8063263751136115483}
+      _typeQualifiedName: GraphNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: -4086010506131680800}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: -8063263751136115483}
+  key: 
+  viewKey:
+    _useConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: a831667d1b141924fa548fc76dd3b2ef, type: 2}
+  delay:
+    _useConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  text:
+    _useConstant: 0
+    ConstantValue: Test
+    Variable: {fileID: 11400000, guid: 0848ec82451ff5d4389e9175c810a082, type: 2}
 --- !u!114 &-6349556787493315920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +185,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 7728565594783283573}
+        node: {fileID: 7186275581202116628}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -265,6 +323,55 @@ MonoBehaviour:
     _useConstant: 0
     ConstantValue: Test
     Variable: {fileID: 11400000, guid: fad2d68f5162518478ce809a6b8567f5, type: 2}
+--- !u!114 &-4086010506131680800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81be348c9145d3b4199a3ddd5b275e46, type: 3}
+  m_Name: Await IsLaserUnlocked
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 812.0684, y: 633.26404}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -4086010506131680800}
+      _typeQualifiedName: GraphNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -8063263751136115483}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -4086010506131680800}
+      _typeQualifiedName: GraphNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 2872623367239270858}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: -4086010506131680800}
+  key: 
+  flag: {fileID: 11400000, guid: 1c8bb905740056548afe31c7e0b3b4f9, type: 2}
+  invert: 0
+  toggleOnReach: 0
 --- !u!114 &-3073993999340055086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,13 +602,15 @@ MonoBehaviour:
   - {fileID: -4642406330192572178}
   - {fileID: 4240373789150760093}
   - {fileID: 2872623367239270858}
-  - {fileID: 7728565594783283573}
   - {fileID: -5996144901783375009}
   - {fileID: -5706303396484792063}
   - {fileID: -2425137356357239847}
   - {fileID: 3119916411338913508}
   - {fileID: -6309433066878539404}
-  timesVisited: 11
+  - {fileID: 7186275581202116628}
+  - {fileID: -8063263751136115483}
+  - {fileID: -4086010506131680800}
+  timesVisited: 28
   inProgress: 1
 --- !u!114 &2872623367239270858
 MonoBehaviour:
@@ -528,7 +637,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 4240373789150760093}
+        node: {fileID: -4086010506131680800}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -540,7 +649,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 7728565594783283573}
+        node: {fileID: 7186275581202116628}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -645,7 +754,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 2872623367239270858}
+        node: {fileID: -8063263751136115483}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -713,7 +822,7 @@ MonoBehaviour:
     _useConstant: 0
     ConstantValue: Test
     Variable: {fileID: 11400000, guid: 54699317b9c98b9469851159625ee52f, type: 2}
---- !u!114 &7728565594783283573
+--- !u!114 &7186275581202116628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -722,18 +831,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d75c727a8c8e88a4997ac276a8b5b69b, type: 3}
-  m_Name: Await Bool
+  m_Script: {fileID: 11500000, guid: 81be348c9145d3b4199a3ddd5b275e46, type: 3}
+  m_Name: Await IsLaserOn
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 392, y: 808}
+  position: {x: 408, y: 824}
   ports:
     keys:
     - input
     - output
     values:
     - _fieldName: input
-      _node: {fileID: 7728565594783283573}
+      _node: {fileID: 7186275581202116628}
       _typeQualifiedName: GraphNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
@@ -745,7 +854,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: output
-      _node: {fileID: 7728565594783283573}
+      _node: {fileID: 7186275581202116628}
       _typeQualifiedName: GraphNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
@@ -757,13 +866,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   input: {fileID: 0}
-  output: {fileID: 7728565594783283573}
+  output: {fileID: 7186275581202116628}
   key: 
-  flag:
-    _useConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: c954d08f941a4094589c037918dc15f6, type: 2}
+  flag: {fileID: 11400000, guid: ec212622065a96c41904f7d2a2464ae9, type: 2}
   invert: 0
+  toggleOnReach: 0
 --- !u!114 &8772909797489078823
 MonoBehaviour:
   m_ObjectHideFlags: 0
